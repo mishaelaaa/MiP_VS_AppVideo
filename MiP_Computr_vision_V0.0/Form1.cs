@@ -6,14 +6,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Media;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+using System.ComponentModel.Design;
+using static System.Windows.Forms.DataFormats;
 
 namespace MiP_Computr_vision_V0._0
 {
     public partial class Form1 : Form
     {
+        private Size _size;
+
         public Form1()
         {
             InitializeComponent();
@@ -25,43 +29,43 @@ namespace MiP_Computr_vision_V0._0
         }
 
         public System.Boolean mute { get; set; }
-    #pragma warning disable CS1633 // Unrecognized #pragma directive
-    #pragma the choose file of my doc
+#pragma warning disable CS1633 // Unrecognized #pragma directive
+#pragma the choose file of my doc
         private void Coose_File_Click(object sender, EventArgs e)
-    #pragma warning restore CS1633 // Unrecognized #pragma directive
+#pragma warning restore CS1633 // Unrecognized #pragma directive
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-            if(openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 this.textBox1.Text = openFileDialog1.FileName;
             }
         }
-    #pragma warning disable CS1633 // Unrecognized #pragma directive
+#pragma warning disable CS1633 // Unrecognized #pragma directive
         private void Play_Click(object sender, EventArgs e)
-    #pragma warning restore CS1633 // Unrecognized #pragma directive
+#pragma warning restore CS1633 // Unrecognized #pragma directive
         {
             axWindowsMediaPlayer1.URL = textBox1.Text;
             axWindowsMediaPlayer1.Ctlcontrols.play();
         }
-    #pragma warning disable CS1633 // Unrecognized #pragma directive
+#pragma warning disable CS1633 // Unrecognized #pragma directive
         private void Pause_Click(object sender, EventArgs e)
-    #pragma warning restore CS1633 // Unrecognized #pragma directive
+#pragma warning restore CS1633 // Unrecognized #pragma directive
         {
             axWindowsMediaPlayer1.Ctlcontrols.pause();
         }
-    #pragma warning disable CS1633 // Unrecognized #pragma directive
+#pragma warning disable CS1633 // Unrecognized #pragma directive
         private void Stop_Click(object sender, EventArgs e)
-    #pragma warning restore CS1633 // Unrecognized #pragma directive
+#pragma warning restore CS1633 // Unrecognized #pragma directive
         {
             axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
 
         private void Mute_Click(object sender, EventArgs e)
         {
-    #pragma warning disable CS8321 // Local function is declared but never used
+#pragma warning disable CS8321 // Local function is declared but never used
             void Mute_CheckStateChanged(EventArgs @event)
-    #pragma warning restore CS8321 // Local function is declared but never used
+#pragma warning restore CS8321 // Local function is declared but never used
             {
                 System.Windows.Forms.CheckBox Mute = (System.Windows.Forms.CheckBox)sender;
 
@@ -78,5 +82,9 @@ namespace MiP_Computr_vision_V0._0
         {
 
         }
+
+        public new System.Drawing.Size Size { get => _size; set => _size = value; }
+
+
     }
 }
