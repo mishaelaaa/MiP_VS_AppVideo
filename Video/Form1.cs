@@ -85,6 +85,9 @@ namespace MiP_Computr_vision_V0._0
 
         public new System.Drawing.Size Size { get => _size; set => _size = value; }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
